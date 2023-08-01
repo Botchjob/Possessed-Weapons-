@@ -1,0 +1,897 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+  <ThingDef Name="BotchJob_PossessedWeaponRegular" ParentName="BaseWeapon" Abstract="True">
+    <techLevel>Medieval</techLevel>
+    <tradeNeverStack>true</tradeNeverStack>
+    <relicChance>3</relicChance>
+    <smeltable>false</smeltable>
+    <burnableByRecipe>true</burnableByRecipe>
+    <thingSetMakerTags>
+      <li>RewardStandardMidFreq</li>
+    </thingSetMakerTags>
+	 <comps>
+	<li>
+        	<compClass>CompQuality</compClass>
+      	</li>
+    </comps>
+  </ThingDef>
+
+ <!--=============================== Melee ================================-->
+
+ <!--=============================== Scourge Blade ================================-->
+
+  <ThingDef ParentName="BotchJob_PossessedWeaponRegular">
+    <defName>BotchJob_ScourgeBlade</defName>
+    <label>scourgeblade</label>
+    <description>An ominous looking sword with a blackened, warped blade.\n\nIts blade appears to emanate a foul substance and will cause toxic buildup in those struck by it.\n\nDue to the vile nature of this weapon, it will negatively effect the wielder's social interactions slightly.</description>
+    <statBases>
+      <MarketValue>2000</MarketValue>
+      <Mass>4</Mass>
+    </statBases>
+	<equippedStatOffsets>
+	<TradePriceImprovement>-0.2</TradePriceImprovement>
+	<NegotiationAbility>-0.2</NegotiationAbility>
+	<SocialImpact>-0.1</SocialImpact>
+	</equippedStatOffsets>
+    <equippedAngleOffset>-60</equippedAngleOffset>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Item/Equipment/WeaponMelee/ScourgeBlade</texPath>
+	<drawSize>1.3</drawSize>
+    </graphicData>
+	 <uiIconScale>1.1</uiIconScale>
+    <weaponClasses>
+      <li>Melee</li>
+      <li>MeleePiercer</li>
+    </weaponClasses>
+	<thingCategories>
+	<li>WeaponsMelee</li>
+	</thingCategories>
+	<weaponTags>
+	<li>BotchJob_ScourgeBlade</li>
+	</weaponTags>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>1.6</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>BotchJob_ToxicStab</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>BotchJob_ToxicCut</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+<!--=============================== Glacial Cleaver ================================-->
+
+  <ThingDef ParentName="BotchJob_PossessedWeaponRegular">
+    <defName>BotchJob_GlacialCleaver</defName>
+    <label>glacial cleaver</label>
+    <description>A vicious axe with a blade composed of pure, unmelting ice.\n\nIn addition to physical damage it will also cause frostbite buildup on hit.\n\nDue to the constant cold aura surrounding this weapon, the wielder will be less comfortable the cold but much more tolerant to high temperatures.</description>
+    <statBases>
+      <MarketValue>2000</MarketValue>
+      <Mass>6</Mass>
+    </statBases>
+	<equippedStatOffsets>
+	<ComfyTemperatureMin>5</ComfyTemperatureMin>
+	<ComfyTemperatureMax>10</ComfyTemperatureMax>
+	</equippedStatOffsets>
+ 	<equippedAngleOffset>-60</equippedAngleOffset>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Item/Equipment/WeaponMelee/GlacialCleaver</texPath>
+	<drawSize>1.1</drawSize>
+    </graphicData>
+    <weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+	<thingCategories>
+	<li>WeaponsMelee</li>
+	</thingCategories>
+	<weaponTags>
+	<li>BotchJob_GlacialCleaver</li>
+	</weaponTags>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>1.6</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>BotchJob_FrostCut</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>2.2</cooldownTime>
+      <extraMeleeDamages>
+          <li>
+            <def>Frostbite</def>
+            <amount>8</amount>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+  </ThingDef>
+
+<!--=============================== Sanctified Sword ================================-->
+
+<ThingDef ParentName="BotchJob_PossessedWeaponRegular">
+    <defName>BotchJob_SanctifiedSword</defName>
+    <label>sanctified sword</label>
+    <description>A grandiose sword bestowed upon only the most valorous of knights, sworn to uphold justice and protect the weak.\n\nThis sword carries a divine blessing, allowing the wielder to withstand more damage and heal from their injuries faster.</description>
+    <statBases>
+      <MarketValue>2000</MarketValue>
+      <Mass>6</Mass>
+    </statBases>
+	<equippedStatOffsets>
+	<IncomingDamageFactor>-0.15</IncomingDamageFactor>
+	<InjuryHealingFactor>0.15</InjuryHealingFactor>
+	</equippedStatOffsets>
+    <equippedAngleOffset>-60</equippedAngleOffset>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Item/Equipment/WeaponMelee/SanctifiedSword</texPath>
+	<drawSize>1.3</drawSize>
+    </graphicData>
+	 <uiIconScale>1.1</uiIconScale>
+    <weaponClasses>
+      <li>Melee</li>
+      <li>MeleePiercer</li>
+    </weaponClasses>
+	<thingCategories>
+	<li>WeaponsMelee</li>
+	</thingCategories>
+	<weaponTags>
+	<li>BotchJob_SanctifiedSword</li>
+	</weaponTags>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>1.6</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>24</power>
+        <cooldownTime>2.4</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>24</power>
+        <cooldownTime>2.4</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+
+<!-- ==================== Volcanic Maul =================== -->
+
+
+  <ThingDef ParentName="BotchJob_PossessedWeaponRegular">
+    <defName>BotchJob_VolcanicMaul</defName>
+    <label>volcanic maul</label>
+    <description>An immense warhammer with a head composed of volcanic rock.\n\nIt is slow to swing but inflicts both physical and fire damage.\n\nDue to the constant heat emitted from this weapon, the wielder will be less comfortable in high temperatures but much more tolerant to the cold.</description>
+     <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/VolcanicMaul</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	<drawSize>1.2</drawSize>
+    </graphicData>
+	<equippedAngleOffset>-65</equippedAngleOffset>
+	<statBases>
+       <MarketValue>3000</MarketValue>
+      <Mass>10</Mass>
+    </statBases>
+    <weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+	<thingCategories>
+	<li>WeaponsMelee</li>
+	</thingCategories>
+	<weaponTags>
+	<li>BotchJob_VolcanicMaul</li>
+	</weaponTags>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>11</power>
+        <cooldownTime>2.2</cooldownTime>
+      </li>
+      <li>
+        <label>head</label>
+        <labelUsedInLogging>false</labelUsedInLogging>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>26</power>
+        <cooldownTime>2.8</cooldownTime>
+	<extraMeleeDamages>
+		<li>
+		  <def>Flame</def>
+		<amount>8</amount>
+		</li>
+	</extraMeleeDamages>
+      </li>
+    </tools>
+    
+   
+  </ThingDef>
+
+<!-- ==================== Craghammer =================== -->
+
+  
+  <ThingDef ParentName="BotchJob_PossessedWeaponRegular">
+    <defName>BotchJob_Craghammer</defName>
+    <label>craghammer</label>
+    <description>A jagged hammer forged from rock with diamond shards protruding from its surface.\n\nThis weapon very much excels at breaking things, destroying walls and structures with ease. In addition, it can also be used as a mining tool, improving the mining speed and yield of the wielder.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/Craghammer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.1</uiIconScale>
+    <statBases>
+	<MarketValue>2000</MarketValue>
+      <Mass>8</Mass>
+    </statBases>
+	<equippedStatOffsets>
+	<MiningSpeed>0.15</MiningSpeed>
+	<MiningYield>0.15</MiningYield>
+	</equippedStatOffsets>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+	<weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+	<thingCategories>
+	<li>WeaponsMelee</li>
+	</thingCategories>
+	<weaponTags>
+	<li>BotchJob_Craghammer</li>
+	</weaponTags>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>11</power>
+        <cooldownTime>2.2</cooldownTime>
+      </li>
+      <li>
+        <label>head</label>
+        <labelUsedInLogging>false</labelUsedInLogging>
+        <capacities>
+          <li>Demolish</li>
+        </capacities>
+        <power>22</power>
+        <cooldownTime>2.2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+<!--=============================== Ranged ================================-->
+
+<!--=============================== Dragonfire Greatbow ================================-->
+  
+ <ThingDef ParentName="BotchJob_PossessedWeaponRegular">
+    <defName>BotchJob_DragonfireGreatbow</defName>
+    <label>dragonfire greatbow</label>
+    <description>A fabled greatbow said to be infused with the strength of a dragon. It is very large and cumbersome but is capable of firing devastating dragonfire arrows to blast and scorch a small area.\n\nDue to the weight and unwieldiness of this weapon, it is slower to fire and re-arm in comparison to a regular bow and will decrease the movement speed of the wielder.</description>
+    <tickerType>Normal</tickerType>
+   <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/DragonfireGreatbow</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	<drawSize>1.2</drawSize>
+    </graphicData>
+<soundInteract>Bow_Large</soundInteract>
+    <statBases>
+	<MarketValue>2000</MarketValue>
+      <Mass>15</Mass>
+      <RangedWeapon_Cooldown>4</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+	<thingCategories>
+	<li>WeaponsRanged</li>
+	</thingCategories>
+	<weaponTags>
+	<li>BotchJob_DragonfireGreatbow</li>
+	</weaponTags>
+  <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>BotchJob_LesserDragonfireArrow</defaultProjectile>
+        <warmupTime>2.5</warmupTime>
+        <range>30</range>
+	<forcedMissRadius>1.2</forcedMissRadius>
+        <soundCast>Bow_Large</soundCast>
+	<muzzleFlashScale>14</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+  </verbs>
+   <tools>
+      <li>
+        <label>limb</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11.7</power>
+        <cooldownTime>4</cooldownTime>
+      </li>
+   </tools>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>2</explosiveRadius>
+        <explosiveDamageType>Flame</explosiveDamageType>
+        <requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+      </li>
+    </comps>
+  </ThingDef>
+
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>BotchJob_LesserDragonfireArrow</defName>
+    <label>dragonfire arrow</label>
+    <graphicData>
+      <texPath>Things/Projectile/DragonfireArrow</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>BotchJob_LesserDragonfireArrow</damageDef>
+     <ai_IsIncendiary>true</ai_IsIncendiary>
+      <explosionRadius>2</explosionRadius>
+      <speed>30</speed>
+    </projectile>
+  </ThingDef>
+
+    <DamageDef Name="BotchJob_LesserDragonfireArrow">
+    	<defName>BotchJob_LesserDragonfireArrow</defName>
+	<workerClass>DamageWorker_Flame</workerClass>
+	<label>flame</label>
+	<hasForcefulImpact>true</hasForcefulImpact>
+	<makesBlood>true</makesBlood>
+	<canInterruptJobs>true</canInterruptJobs>
+	<externalViolence>true</externalViolence>
+	<deathMessage>{0} has burned to death.</deathMessage>
+		<hediff>Burn</hediff>
+	<armorCategory>Heat</armorCategory>
+	<minDamageToFragment>15</minDamageToFragment>
+	<defaultDamage>20</defaultDamage>
+	<defaultArmorPenetration>0</defaultArmorPenetration>
+	<explosionHeatEnergyPerCell>15</explosionHeatEnergyPerCell>
+	<explosionCellFleck>BlastFlame</explosionCellFleck>
+	<explosionColorCenter>(1, 0.7, 0.7)</explosionColorCenter>
+	<explosionColorEdge>(1, 1, 0.7)</explosionColorEdge>
+	<soundExplosion>BotchJob_FieryImpact</soundExplosion>
+	<combatLogRules>Damage_Flame</combatLogRules>
+	<canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+
+</DamageDef>
+
+<!--=============================== Lightning Javelin ================================-->
+
+ <ThingDef ParentName="BotchJob_PossessedWeaponRegular">
+    <defName>BotchJob_LightningJavelin</defName>
+    <label>lightning javelin</label>
+    <description>A large, lightning infused spear that is deadly in close quarters but can also be thrown to produce an EMP burst on impact.\n\nThe electricity coursing through this weapon will energize its wielder, increasing their movement speed. However, the downside of this is that being constantly energized makes it difficult to sleep and as such, the wielder's rest rate will be slower.</description>
+    <tickerType>Normal</tickerType>
+   <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/LightningJavelin</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	<drawSize>1.1</drawSize>
+    </graphicData>
+	<statBases>
+	<MarketValue>2000</MarketValue>
+      <Mass>8</Mass>
+      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+	<thingCategories>
+	<li>WeaponsRanged</li>
+	</thingCategories>
+	<weaponTags>
+	<li>BotchJob_LightningJavelin</li>
+	</weaponTags>
+  <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>BotchJob_LightningJavelinThrown</defaultProjectile>
+        <warmupTime>1.35</warmupTime>
+        <range>25</range>
+	<forcedMissRadius>1.2</forcedMissRadius>
+        <soundCast>Power_OnSmall</soundCast>
+      </li>
+  </verbs>
+	<comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>2</explosiveRadius>
+        <explosiveDamageType>EMP</explosiveDamageType>
+        <requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+      </li>
+	</comps>
+   <tools>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>26</power>
+        <cooldownTime>2.6</cooldownTime>
+	<armorPenetration>0.5</armorPenetration>
+	<extraMeleeDamages>
+		<li>
+			<def>EMP</def>
+			<amount>9</amount>
+		</li>
+	</extraMeleeDamages>
+      </li>
+   </tools>
+  </ThingDef>
+
+<!--=============================== Archmage Staff ================================-->
+
+
+<ThingDef ParentName="BotchJob_PossessedWeaponRegular">
+    <defName>BotchJob_ArchmageStaff</defName>
+    <label>archmage staff</label>
+    <description>An extravagant, ornate staff capable of firing a barrage of magic projectiles. It is very slow to charge up and wildly inaccurate but can decimate large groups of enemies.\n\nDue to its slow charge time and ineffectiveness as a melee weapon, it will leave the caster vulnerable.</description>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/ArchmageStaff</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	<drawSize>1.2</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>2000</MarketValue>
+      <Mass>5</Mass>
+      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+    </statBases>
+	   <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+	<thingCategories>
+	<li>WeaponsRanged</li>
+	</thingCategories>
+	<weaponTags>
+	<li>BotchJob_ArchmageStaff</li>
+	</weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>BotchJob_ArchmageStaffBolt</defaultProjectile>
+        <forcedMissRadius>6</forcedMissRadius>
+        <warmupTime>8</warmupTime>
+        <ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius>
+        <range>25</range>
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <burstShotCount>8</burstShotCount>
+	<soundAiming>BotchJob_ArchmageStaffCharge</soundAiming>
+        <soundCast>BotchJob_ArchmageStaffCast</soundCast>
+        <stopBurstWithoutLos>false</stopBurstWithoutLos>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>shaft</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11.7</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+   <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>2</explosiveRadius>
+        <explosiveDamageType>Flame</explosiveDamageType>
+        <requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+      </li>
+    </comps>
+ </ThingDef>
+  
+
+<!--=============================== Automaton Crossbow ================================-->
+
+<ThingDef ParentName="BotchJob_PossessedWeaponRegular">
+    <defName>BotchJob_AutomatonCrossbow</defName>
+    <label>automaton crossbow</label>
+    <description>An intricate, steam powered crossbow forged from the remains of some kind of ancient automaton.\n\nnOn activation, it fires three armor piercing bolts in quick succession but is slow to reload.\n\nJust holding this technological marvel will make its wielder feel smarter, perhaps this is a placebo effect but the increased confidence will improve their research speed regardless.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/AutomatonCrossbow</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	<drawSize>0.9</drawSize>
+    </graphicData>
+    <soundInteract>Bow_Large</soundInteract>
+    <statBases>
+	<MarketValue>2000</MarketValue>
+      <Mass>8</Mass>
+      <AccuracyTouch>0.86</AccuracyTouch>
+      <AccuracyShort>0.9</AccuracyShort>
+      <AccuracyMedium>0.7</AccuracyMedium>
+      <AccuracyLong>0.54</AccuracyLong>
+      <RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>
+    </statBases>
+    <equippedStatOffsets>
+      <ResearchSpeed>0.20</ResearchSpeed>
+    </equippedStatOffsets>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+	<thingCategories>
+	<li>WeaponsRanged</li>
+	</thingCategories>
+	<weaponTags>
+	<li>BotchJob_AutomatonCrossbow</li>
+	</weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>BotchJob_LesserAutomatonCrossbowBolt</defaultProjectile>
+        <warmupTime>0.4</warmupTime>
+        <range>28</range>
+        <soundCast>Bow_Large</soundCast>
+	 <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+        <burstShotCount>3</burstShotCount>
+	<stopBurstWithoutLos>false</stopBurstWithoutLos>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>limb</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>BotchJob_LesserAutomatonCrossbowBolt</defName>
+    <label>automaton bolt</label>
+    <graphicData>
+      <texPath>Things/Projectile/AutomatonCrossbowBolt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>ArrowHighVelocity</damageDef>
+      <damageAmountBase>12</damageAmountBase>
+      <stoppingPower>2</stoppingPower>
+      <armorPenetrationBase>0.25</armorPenetrationBase>
+      <speed>60</speed>
+    </projectile>
+  </ThingDef>
+
+<!--=============================== Verdant Bow ================================-->
+
+<ThingDef ParentName="BotchJob_PossessedWeaponRegular">
+    <defName>BotchJob_VerdantBow</defName>
+    <label>verdant bow</label>
+    <description>A majestic longbow crafted from the branch of a mythical, ancient tree.\n\nHolding this weapon will make the wielder feel more in tune with nature, improving their plant work speed and yield.\n\nIn addition, the bow is capable of producing sweet berries, increasing the amount of nutrition that can be foraged during long caravan journeys.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/VerdantBow</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Bow_Recurve</soundInteract>
+    <statBases>
+	<MarketValue>2000</MarketValue>
+      <Mass>2</Mass>
+      <AccuracyTouch>0.70</AccuracyTouch>
+      <AccuracyShort>0.78</AccuracyShort>
+      <AccuracyMedium>0.70</AccuracyMedium>
+      <AccuracyLong>0.45</AccuracyLong>
+      <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown>
+    </statBases>
+	<equippedStatOffsets>
+	<PlantWorkSpeed>0.15</PlantWorkSpeed>
+	<PlantHarvestYield>0.15</PlantHarvestYield>
+	<ForagedNutritionPerDay>3</ForagedNutritionPerDay>
+	</equippedStatOffsets>
+    <weaponClasses>
+      <li>Ranged</li>
+    </weaponClasses>
+	<thingCategories>
+	<li>WeaponsRanged</li>
+	</thingCategories>
+	<weaponTags>
+	<li>BotchJob_VerdantBow</li>
+	</weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>BotchJob_LesserVerdantBowArrow</defaultProjectile>
+        <warmupTime>1.45</warmupTime>
+        <range>26</range>
+        <soundCast>Bow_Recurve</soundCast>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>limb</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <rotateInShelves>false</rotateInShelves>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>BotchJob_LesserVerdantBowArrow</defName>
+    <label>verdant bow arrow</label>
+    <graphicData>
+      <texPath>Things/Projectile/VerdantBowArrow</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>ArrowHighVelocity</damageDef>
+      <damageAmountBase>15</damageAmountBase>
+      <stoppingPower>1.2</stoppingPower>
+      <speed>54</speed>
+    </projectile>
+  </ThingDef>
+ 
+<!--=============================== Gilded Arquebus ================================-->
+ 
+
+ <ThingDef ParentName="BotchJob_PossessedWeaponRegular">
+    <defName>BotchJob_GildedArquebus</defName>
+    <label>gilded arquebus</label>
+    <description>A finely crafted black powder rifle with a matchlock firing mechanism.\n\nIt fires a single, long range shot with enough velocity to easily penetrate most conventional armor but is very slow to reload once fired.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/GildedArquebus</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	<drawSize>1.0</drawSize>
+    </graphicData>
+	<equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <weaponClasses>
+      <li>LongShots</li>
+    </weaponClasses>
+	<weaponTags>
+	<li>BotchJob_GildedArquebus</li>
+	</weaponTags>
+    <statBases>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.80</AccuracyLong>
+      <RangedWeapon_Cooldown>6</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>BotchJob_ArquebusBulletLesser</defaultProjectile>
+        <warmupTime>0.6</warmupTime>
+        <range>40</range>
+        <soundCast>BotchJob_ArquebusShot</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>15</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>BotchJob_ArquebusBulletLesser</defName>
+    <label>arquebus bullet</label>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>26</damageAmountBase>
+	   <armorPenetrationBase>0.9</armorPenetrationBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>70</speed>
+    </projectile>
+    <graphicData>
+      <texPath>Things/Projectile/BotchJob_ArquebusBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+<!--=============================== Shrouded Dagger ================================-->
+
+ <ThingDef ParentName="BotchJob_PossessedWeaponRegular">
+    <defName>BotchJob_ShroudedDagger</defName>
+    <label>shrouded dagger</label>
+    <description>A deadly dagger favoured by assassins and rogues.\n\nIn skilled hands it can deliver a lightning fast flurry of stabs and slashes and can also be thrown short distances, ideal for finishing off fleeing opponents.\n\nIt allows the wielder to remain light on their feet, increasing their melee dodge chance and reducing the chances of them triggering hidden traps.</description>
+   <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/ShroudedDagger</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<uiIconScale>1.1</uiIconScale>
+	 <equippedAngleOffset>-60</equippedAngleOffset>
+	<statBases>
+	<MarketValue>2000</MarketValue>
+      <Mass>1</Mass>
+      <RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+    </statBases>
+	<equippedStatOffsets>
+	<PawnTrapSpringChance>-0.15</PawnTrapSpringChance>
+	<MeleeDodgeChance>0.15</MeleeDodgeChance>
+	</equippedStatOffsets>
+	<weaponClasses>
+      <li>Ranged</li>
+    </weaponClasses>
+	<weaponTags>
+	<li>BotchJob_ShroudedDagger</li>
+	</weaponTags>
+  <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>BotchJob_ShroudedDaggerThrown</defaultProjectile>
+        <warmupTime>0.2</warmupTime>
+        <range>15</range>
+        <soundCast>ThrowGrenade</soundCast>
+      </li>
+  </verbs>
+   <tools>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>14</power>
+        <cooldownTime>1.2</cooldownTime>
+	<armorPenetration>0.5</armorPenetration>
+      </li>
+<li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>16</power>
+        <cooldownTime>1.2</cooldownTime>
+      </li>
+   </tools>
+  </ThingDef>
+
+
+<ThingDef MayRequire="Ludeon.RimWorld.Biotech" ParentName="BotchJob_PossessedWeaponRegular">
+    <defName>BotchJob_AcolyteStaff</defName>
+    <label>acolyte staff</label>
+    <description>An gnarled, ancient staff capable of firing a beam of pure energy that melts armor and scorches flesh.\n\nIt is slow to charge and ineffective at short range, leaving the caster vulnerable.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/AcolyteStaff</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+		<drawSize>1.2</drawSize>
+    </graphicData>
+	<weaponTags>
+	<li>BotchJob_AcolyteStaff</li>
+	</weaponTags>
+    <statBases>
+      <Mass>3</Mass>
+	<MarketValue>2000</MarketValue>
+      <AccuracyTouch>0.60</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.55</AccuracyLong>
+      <RangedWeapon_Cooldown>1.70</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_ShootBeam</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <warmupTime>3</warmupTime>
+        <range>26</range>
+        <minRange>3.9</minRange>
+        <beamFullWidthRange>10</beamFullWidthRange>
+        <burstShotCount>8</burstShotCount>
+        <beamWidth>6</beamWidth>
+        <ticksBetweenBurstShots>22</ticksBetweenBurstShots>
+        <beamDamageDef>BotchJob_StaffBeam</beamDamageDef>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
+        <beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
+        <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
+        <beamMaxDeviation>2</beamMaxDeviation>
+        <beamCurvature>0.6</beamCurvature>
+        <beamMoteDef>BotchJob_BeamBase</beamMoteDef>
+        <beamEndEffecterDef>BotchJob_Beam_End</beamEndEffecterDef>
+        <beamChanceToStartFire>0.85</beamChanceToStartFire>
+        <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
+        <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
+        <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
+        <beamStartOffset>0.2</beamStartOffset>
+        <beamLineFleckChanceCurve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(0.65, 0.4)</li>
+            <li>(1, 0.75)</li>
+          </points>
+        </beamLineFleckChanceCurve>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>shaft</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+
+  
+ 
+  
+
+</Defs>
